@@ -5,8 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_')
-  const frontendPort = Number(process.env.VITE_PORT || env.VITE_PORT || 3000)
-  const backendTarget = process.env.VITE_API_PROXY_TARGET || env.VITE_API_PROXY_TARGET || 'http://localhost:8001'
+  const frontendPort = Number(process.env.VITE_PORT || env.VITE_PORT || 8080)
+  const backendTarget = process.env.VITE_API_PROXY_TARGET || env.VITE_API_PROXY_TARGET || 'http://localhost:8088'
 
   return {
     plugins: [
