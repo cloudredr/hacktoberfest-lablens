@@ -1,0 +1,4 @@
+{
+    "chat.permissions.default": "autopilot",
+    "python.terminal.useEnvFile": true
+}
