@@ -9,13 +9,14 @@ if BACKEND_DIR not in sys.path:
     sys.path.insert(0, BACKEND_DIR)
 
 if __name__ == "__main__":
-    # pyrefly: ignore[missing-import]
     import uvicorn
 
+    port = int(os.environ.get("PORT", sys.argv[1] if len(sys.argv) > 1 else 8001))
+
     print("=" * 65)
-    print("  Starting LabLens Backend Server")
-    print("  API Base: http://127.0.0.1:8000")
-    print("  Interactive Docs (Swagger): http://127.0.0.1:8000/docs")
+    print(f"  Starting LabLens Backend Server on port {port}")
+    print(f"  API Base: http://127.0.0.1:{port}")
+    print(f"  Interactive Docs (Swagger): http://127.0.0.1:{port}/docs")
     print("=" * 65)
 
-    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("app.main:app", host="127.0.0.1", port=port, reload=True)
